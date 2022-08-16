@@ -1,4 +1,4 @@
-package yavirac.ticket.feature.user;
+package yavirac.ticket.feature.usuario;
 
 import java.util.List;
 
@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/user")
 @CrossOrigin({"*"})
-public class UserController {
+public class UsuarioController {
 
     @Autowired
-    UserService userService;
+    UsuarioService userService;
 
     @GetMapping("/findAll")
-    public List<User> findAll(){
+    public List<Usuario> findAll(){
         return userService.findAll();
     }
     
@@ -40,19 +40,19 @@ public class UserController {
     
     //Create
     @PostMapping("/save")
-    public User save(@RequestBody User user){
+    public Usuario save(@RequestBody Usuario user){
         return userService.save(user);
     }
 
     //Read
      @GetMapping("/{id}")
-    public User findById(@PathVariable long id){
+    public Usuario findById(@PathVariable long id){
          return userService.findById(id);
      }
 
     //Update
     @PutMapping("/update")
-    public User update(@RequestBody User user)
+    public Usuario update(@RequestBody Usuario user)
     {
         return userService.save(user);
     }
@@ -65,7 +65,7 @@ public class UserController {
     }
 
     @GetMapping("/findByName/{term}")
-    public List<User> findByName(@PathVariable String term){
+    public List<Usuario> findByName(@PathVariable String term){
         return userService.findByName(term);
     }
 }

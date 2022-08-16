@@ -1,4 +1,4 @@
-package yavirac.ticket.feature.user;
+package yavirac.ticket.feature.usuario;
 
 import java.util.List;
 
@@ -6,29 +6,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class UsuarioService {
     
     @Autowired
-    UserRepository userRepository;
+    UsuarioRepository userRepository;
 
-    public List<User> findAll(){
+    public List<Usuario> findAll(){
         return userRepository.findAll();
     }
 
-    public User findById(long id){
-        return userRepository.findById(id).orElse(new User());
+    public Usuario findById(long id){
+        return userRepository.findById(id).orElse(new Usuario());
     }
 
 
 
 
 
-    public User save(User user){
+    public Usuario save(Usuario user){
 
         return userRepository.save(user);
     }
 
-    public User update(User user){
+    public Usuario update(Usuario user){
         return userRepository.save(user);
     }
 
@@ -36,7 +36,7 @@ public class UserService {
         userRepository.deleteById(id);
     }
      
-    public List<User> findByName(String term){
+    public List<Usuario> findByName(String term){
         return userRepository.findByNameLikeIgnoreCase(term+"%");
     }
 }

@@ -1,4 +1,4 @@
-package yavirac.ticket.feature.user;
+package yavirac.ticket.feature.usuario;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Data
 @Table ("user_authority1")
-public class UserAuthority1 {
+public class UsuarioAuthority1 {
     
     
     @Id private long id;

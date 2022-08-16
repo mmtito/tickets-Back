@@ -1,4 +1,4 @@
-package yavirac.ticket.feature.user;
+package yavirac.ticket.feature.usuario;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Data
 @Table("users")
-public class User {
+public class Usuario {
 
     @Id
     @Column
@@ -29,6 +29,6 @@ public class User {
     private Long carreraId;
 
     @MappedCollection(idColumn = "person_id")
-    private Set<UserAuthority1> authorities = new HashSet<>();
+    private Set<UsuarioAuthority1> authorities = new HashSet<>();
 
 }
